@@ -1,7 +1,7 @@
 import { Head, Input, Label } from "./Filter.styled";
 import PropTypes from 'prop-types';
 
-export const Filter = ({contacts, onChange}) => {
+export const Filter = ({filter, onChange}) => {
   return (
     <>
       <Head>Find contacts by name</Head>
@@ -10,7 +10,7 @@ export const Filter = ({contacts, onChange}) => {
           id="filter"
           type="text"
           name="filter"
-          value={contacts.filter}
+          value={filter}
           onChange={onChange}
         />
       </Label>
@@ -19,14 +19,7 @@ export const Filter = ({contacts, onChange}) => {
 }
 
 Filter.propTypes = {
-  contacts: PropTypes.shape({
-    contacts: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      number: PropTypes.node,
-    })),
-    filter: PropTypes.string.isRequired,
-  }),
+  filter: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 }
 
