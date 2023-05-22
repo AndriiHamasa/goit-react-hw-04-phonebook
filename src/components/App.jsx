@@ -27,7 +27,7 @@ export const App = () => {
     if (
       contacts
         .map(contact => contact.name)
-        .some(collectionName => collectionName === name)
+        .some(collectionName => collectionName.toLowerCase() === name.toLowerCase())
     ) {
       return alert(`${name} is already in contacts`);
     }
